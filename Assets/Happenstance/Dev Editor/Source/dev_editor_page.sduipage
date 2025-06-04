@@ -1,0 +1,2424 @@
+!UIPageAsset
+Id: 275be4a6-767c-425e-b0e2-68f245063311
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! d56e9a14-e333-4f6c-b8d9-227e6eb11832
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 0a79e316-4fee-4ea0-a30a-6ac7dbba6cbf
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 20.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 283.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: components_title
+                Text: 'Components:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 0af6027b-7437-4711-822a-d647064d23fb
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_copy_button
+                Content: !TextBlock ref!! 8282711a-b229-45c9-9b37-a8075b90250f
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !TextBlock
+                Id: 124830a1-f30d-4223-892f-eb2d7df5a75c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 13ed8023-4bf7-4cbc-94f0-2b6ce3b5f794
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 20.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 63.0, Top: 16.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: selected_text
+                Text: HS Dev Editor
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 150581ae-48b3-4f63-8064-8bc9d45c49e6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                ClipToBounds: true
+                Width: 200.0
+                Height: 170.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 4.0, Top: 4.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_stackpanel
+                Children: {}
+        -   UIElement: !Button
+                Id: 15a923b9-a03b-4e28-87ba-215c120d0c49
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 5
+                Width: 72.0
+                Height: 29.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Bottom
+                Margin: {Left: 133.0, Top: 480.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: refresh_button
+                Content: !TextBlock ref!! 7c944fcd-4429-4838-a571-618d20179ace
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 12
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 11
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 12
+        -   UIElement: !Button
+                Id: 186f61c8-092c-4c8f-955c-386d2224837b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !Button
+                Id: 1c4158ca-7833-46ae-b22d-9c0f7844e4db
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !TextBlock
+                Id: 1d555973-2d01-404b-a2ae-8be31b3155db
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Canvas
+                Id: 1df11d36-5e24-4b2a-81b4-2c746a3bc61e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! ec2b2107-77cf-4697-958c-98d9f1160b38
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 8bd6206f-ebd6-4dc1-99e4-718714fc2a05
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! af1f4959-e51e-4112-90ca-db8a12272784
+        -   UIElement: !Button
+                Id: 1eaa2362-2d06-4e04-80b7-f6077bf80fe8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !Canvas
+                Id: 1fdb36e6-5940-4aac-8ada-83134e7a14c5
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 221.0
+                Height: 87.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 15.0, Top: 135.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Rotation Axis
+                Children:
+                    dc7bab7f7dfdec77eeb44ea1b17287c2: !TextBlock ref!! 5b2d21eb-8d4c-4b9d-a569-28203d250509
+                    e5dce2ec8476f1d68fb77848ee41210d: !EditText ref!! c7dea7a1-be4f-4d98-a3bb-0876007ac292
+                    9ae1f403c58070f3fc64fd26f3bc66a6: !TextBlock ref!! 391bf220-fcfd-40ee-ab3a-a77c1befeb15
+                    5febf89ee12cb35e078fd430fd7f9802: !EditText ref!! aaae8599-7dd3-49ee-98bb-9c96022b5274
+                    fdcacce6f4b27cee60853578cdd814bb: !TextBlock ref!! 61c03c03-e91a-4087-99be-348833947de6
+                    a1f69992b72b83f085b99d0c76ac1e14: !EditText ref!! 2a5db854-0749-4537-9437-3deddc55e8e7
+                    3a777b087f3ffceadb2921970ebc2580: !TextBlock ref!! 91f1b155-299c-450b-b10a-97ee7befa617
+                    c1c4a75d4f5d13db43f3682f6e96157c: !Button ref!! 349e9255-9dc4-4abe-b03c-dbcf005ae9ad
+                    9d83942a5ab2ae5f58f56889b98a4cdb: !Canvas ref!! 608f3ba0-a71f-45a4-938e-51e4bfcee42c
+                    bae8e9b9a55d1d103183b32b464fada5: !Canvas ref!! cea04997-d2d6-4b72-a048-e814d5b866a9
+                    e0f658ec8546007dbfca373a0eeac303: !Canvas ref!! 3584d8b2-c078-4b39-b326-54e43453f902
+        -   UIElement: !Button
+                Id: 22da78d0-18ac-4739-85d8-1afe096c9eb0
+                DependencyProperties: {}
+                BackgroundColor: {R: 3, G: 3, B: 3, A: 0}
+                DrawLayerNumber: 2
+                Width: 30.0
+                Height: 30.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 9.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: move_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+        -   UIElement: !Canvas
+                Id: 2317a5c3-ddd0-4234-9296-25ab1820ec18
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 221.0
+                Height: 87.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 15.0, Top: 206.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Scale Axis
+                Children:
+                    dc7bab7f7dfdec77eeb44ea1b17287c2: !TextBlock ref!! e333b8d3-4f44-4f16-910b-e250784dd705
+                    e5dce2ec8476f1d68fb77848ee41210d: !EditText ref!! c8315e22-e403-4b68-9ccc-89ca6546786b
+                    9ae1f403c58070f3fc64fd26f3bc66a6: !TextBlock ref!! d4b40b37-4887-4f83-afe0-b6143d2b289f
+                    5febf89ee12cb35e078fd430fd7f9802: !EditText ref!! d5f3e1f3-bcf9-4220-8611-ff7414bd2351
+                    fdcacce6f4b27cee60853578cdd814bb: !TextBlock ref!! 6cb5ba70-3f7c-4048-be99-b02f135bafb2
+                    a1f69992b72b83f085b99d0c76ac1e14: !EditText ref!! dc751a38-7c09-4a58-ac79-aaf0e8992963
+                    3a777b087f3ffceadb2921970ebc2580: !TextBlock ref!! 550976a6-2353-4614-8635-ecdee9c7ea2f
+                    c1c4a75d4f5d13db43f3682f6e96157c: !Button ref!! d45ea7ce-f08d-40b9-9e77-ac75884dd15f
+                    9d83942a5ab2ae5f58f56889b98a4cdb: !Canvas ref!! 6ad2688f-07c2-45bd-a051-0d91eb0fb8fd
+                    bae8e9b9a55d1d103183b32b464fada5: !Canvas ref!! dc7b5fae-46cd-4d5c-a5f9-9b4724a9b6ef
+                    e0f658ec8546007dbfca373a0eeac303: !Canvas ref!! dec38aa4-fcf5-45b7-a6c7-1afe8e703cce
+        -   UIElement: !EditText
+                Id: 2884c8d7-8bff-4311-bca2-75377f037240
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 134.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !TextBlock
+                Id: 29818d1b-9393-442e-9de3-a5ddea3d6278
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 209.00002
+                Height: 15.007019
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 19.0, Top: 506.993}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: components_title
+                Text: R+Arrows (Rotate) | S+Arrows (Scale)
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 12.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !EditText
+                Id: 2a5db854-0749-4537-9437-3deddc55e8e7
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 134.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !TextBlock
+                Id: 2b29fee2-13ac-4dc0-80a7-421d505d7c77
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 2d8bbc69-37d1-468f-b99e-470adc866904
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_title
+                Text: 'X:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 198, G: 73, B: 81, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 33984be2-a544-460a-ba61-a76d321e3ab8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 183.0
+                Height: 25.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 575.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: hold_shit_helper_text
+                Text: 'Hold Alt: Fine Control'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Button
+                Id: 349e9255-9dc4-4abe-b03c-dbcf005ae9ad
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 38.13965
+                Height: 24.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 179.86, Top: 20.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_copy_all
+                Padding: {Left: 0.0, Top: 0.0, Right: 0.0, Bottom: 0.0}
+                Content: !TextBlock ref!! 55cc5aa8-fee8-4dad-9051-3a22e9df5e2b
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 15
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+        -   UIElement: !Canvas
+                Id: 351d3c45-6cd5-4367-9c58-d60e3dbe5033
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 236.0
+                Height: 532.0
+                HorizontalAlignment: Right
+                Margin: {Top: 94.0, Right: 11.0, Bottom: 94.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_inspector_holder
+                Children:
+                    89cfee43e165123558288e43f3d71cce: !ImageElement ref!! d6f9fd54-f298-491b-9ca4-4d9c40036fa0
+                    ba51cb17f592737e11781eff1e74b839: !Button ref!! cd03e903-e114-413b-94d0-9f4c43ff84c4
+                    e2245146d1f21c76e109a49cb21fae0f: !TextBlock ref!! 5e7e219d-5ae7-47c5-83fe-74f18113a162
+                    2e499b5a0d9bfae4dc0583fcec456efe: !ImageElement ref!! cb293977-f324-47e1-abcb-e6a75f192a68
+                    c6c0d274cb4b72a1e5a8af6295e55fd0: !ScrollViewer ref!! f0e13696-efa6-44d8-bafd-aa27b9269cb1
+                    1290099ea2242426d479cd92e471677f: !TextBlock ref!! 0a79e316-4fee-4ea0-a30a-6ac7dbba6cbf
+                    94c98cd7d0e8a4ea01599e3d04649764: !TextBlock ref!! dbdd7ae1-237f-4d23-bb68-13e679cfa685
+                    d7b9805ce54c8bed8bbeb01491ff9f72: !TextBlock ref!! 29818d1b-9393-442e-9de3-a5ddea3d6278
+                    820e3a3aa12aa60ae7c1fb84fd39a6a5: !ImageElement ref!! a5a0cc46-62a8-407f-abc2-020c8ef0e01d
+                    f53d670b85358e8686e8275de894a88e: !Canvas ref!! a0220e7c-ef19-4261-b10e-8a7820806094
+                    b1dd2841b8fa1332a011eb9b0792cbfe: !Canvas ref!! 1fdb36e6-5940-4aac-8ada-83134e7a14c5
+                    310cf7a9f3a4db7d17c33f8d01c21dd2: !Canvas ref!! 2317a5c3-ddd0-4234-9296-25ab1820ec18
+        -   UIElement: !Canvas
+                Id: 3584d8b2-c078-4b39-b326-54e43453f902
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 131.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! 81542eef-fb26-4c70-8374-6b0b9c7ca2fd
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! e4736565-d79e-4561-a054-f5cc75f80998
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 851b1377-a6e3-4e89-9c64-a9ddda889cd2
+        -   UIElement: !TextBlock
+                Id: 391bf220-fcfd-40ee-ab3a-a77c1befeb15
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_title
+                Text: 'X:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 198, G: 73, B: 81, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 3923d835-29e2-4c21-a6df-2dcc3bc0c709
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 245.0
+                Height: 26.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 62.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: selected_text
+                Text: 'Selected:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 3b613074-3a12-4a86-af32-ff4a2812cc99
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !Button
+                Id: 40294053-1d8d-4711-a557-3307d477df77
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_copy_button
+                Content: !TextBlock ref!! 83337092-9eed-4090-9787-d9924b172889
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !TextBlock
+                Id: 40856cc1-3f50-41e5-8989-09253549ab79
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 14.0
+                Height: 25.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 550.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Pipe 1
+                Text: '|'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 44057c44-ebb2-4c4f-8bdf-a329eb030bf3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 19.139648
+                Height: 12.00293
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 12.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !ImageElement
+                Id: 47b1e429-2b4c-4901-b59b-64ccee52c252
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 201.00002
+                Height: 335.9929
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 22.0, Top: 130.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: secondary_background
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 7
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !TextBlock
+                Id: 498cbbd4-8174-476b-b602-d21d55dc61e7
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 60.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_title
+                Text: 'Y:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 71, G: 222, B: 128, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 4b066af1-722c-4f92-8a81-d71df7b30992
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !Button
+                Id: 53101c93-6915-452c-89bb-11e6b8bf9517
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !TextBlock
+                Id: 550976a6-2353-4614-8635-ecdee9c7ea2f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 120.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_title
+                Text: 'Z:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 91, G: 151, B: 205, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 555f7927-356b-4ab2-99f8-badcf3572417
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 55cc5aa8-fee8-4dad-9051-3a22e9df5e2b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 19.139648
+                Height: 12.00293
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 12.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Canvas
+                Id: 568e6814-6311-4b76-b16a-e5c5f546be91
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 236.0
+                Height: 532.0
+                HorizontalAlignment: Left
+                Margin: {Top: 94.0, Bottom: 94.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_list_holder
+                Children:
+                    89cfee43e165123558288e43f3d71cce: !ImageElement ref!! 9514b416-4379-403d-b54a-f2751cf5d6f8
+                    ba51cb17f592737e11781eff1e74b839: !Button ref!! 22da78d0-18ac-4739-85d8-1afe096c9eb0
+                    e2245146d1f21c76e109a49cb21fae0f: !TextBlock ref!! 13ed8023-4bf7-4cbc-94f0-2b6ce3b5f794
+                    67d4c7d6df991f2593d10a18a0cac0e4: !Button ref!! a45f2406-d39d-43ef-a8a2-12f31bbc81da
+                    c49b0025c272134b9714cc07c617452c: !Button ref!! 15a923b9-a03b-4e28-87ba-215c120d0c49
+                    2e499b5a0d9bfae4dc0583fcec456efe: !ImageElement ref!! 47b1e429-2b4c-4901-b59b-64ccee52c252
+                    3e7298793e0c51b090b4b66cdf5b5536: !ScrollViewer ref!! 7cd82045-0c56-4470-856d-febb86ea32a5
+                    039a8675cc9bbd0f545c03f850f191f6: !EditText ref!! 92bedff3-558a-4a59-bda5-c7a4d0756b1c
+                    1290099ea2242426d479cd92e471677f: !TextBlock ref!! c1cee776-6176-4cfc-bf6d-a9b596ff2d14
+                    820e3a3aa12aa60ae7c1fb84fd39a6a5: !ImageElement ref!! c3920ed9-8408-45db-8f17-9b7a646eba1c
+                    383c5921624a72ddb3b981741e4dda33: !Button ref!! f1af2f6c-aa5c-4540-baa6-493c42d0d6fd
+        -   UIElement: !TextBlock
+                Id: 5b2d21eb-8d4c-4b9d-a569-28203d250509
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rotation_title
+                Text: Rotation
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 5e7861e3-e35b-423a-b76b-d1aac262ed7b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 35.0
+                Height: 32.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 16.0, Top: 8.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: move_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+        -   UIElement: !TextBlock
+                Id: 5e7e219d-5ae7-47c5-83fe-74f18113a162
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 20.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 67.0, Top: 16.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Entity Inspector
+                Text: 'Entity Inspector:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 91, G: 151, B: 205, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Canvas
+                Id: 608f3ba0-a71f-45a4-938e-51e4bfcee42c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! c33bf268-5114-4ec4-a512-0f565e8b4e5e
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 99275c9e-e7c6-44fb-9736-6e30b8afeead
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 0af6027b-7437-4711-822a-d647064d23fb
+        -   UIElement: !StackPanel
+                Id: 60dfd866-046c-4fa0-8d96-9a0d12fd0ac9
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 190.0
+                Height: 330.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 7.0, Top: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_stackpanel
+                Children: {}
+        -   UIElement: !Button
+                Id: 61051185-e3a5-45c6-bd5d-b27882da8656
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 38.13965
+                Height: 24.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 179.86, Top: 20.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_copy_all
+                Padding: {Left: 0.0, Top: 0.0, Right: 0.0, Bottom: 0.0}
+                Content: !TextBlock ref!! 44057c44-ebb2-4c4f-8bdf-a329eb030bf3
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 15
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+        -   UIElement: !TextBlock
+                Id: 61c03c03-e91a-4087-99be-348833947de6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 60.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_title
+                Text: 'Y:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 71, G: 222, B: 128, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Canvas
+                Id: 6ad2688f-07c2-45bd-a051-0d91eb0fb8fd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! 1c4158ca-7833-46ae-b22d-9c0f7844e4db
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 53101c93-6915-452c-89bb-11e6b8bf9517
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 40294053-1d8d-4711-a557-3307d477df77
+        -   UIElement: !Button
+                Id: 6bf6936e-6c8d-4137-8115-afd41ea28bcc
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_copy_button
+                Content: !TextBlock ref!! 124830a1-f30d-4223-892f-eb2d7df5a75c
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !Canvas
+                Id: 6c0a0a65-267e-4aed-83d3-9da81d7594dd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 66.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! d2c9237c-1dc1-4655-bd19-98abf53ca6fc
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 3b613074-3a12-4a86-af32-ff4a2812cc99
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! e766374d-67fe-4452-ba30-304696213efd
+        -   UIElement: !TextBlock
+                Id: 6cb5ba70-3f7c-4048-be99-b02f135bafb2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 60.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_title
+                Text: 'Y:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 71, G: 222, B: 128, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 7011e6f6-511a-45fc-ac30-05d159cd2c8f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_copy_button
+                Content: !TextBlock ref!! 8e23c338-db51-4853-aaf7-9d4ce61ff903
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !Button
+                Id: 72146174-5c1f-413e-8c21-5e973783442c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !ImageElement
+                Id: 79f8ded1-fea0-4543-80b3-ac481437991b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 999.0
+                Height: 47.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: helper_background
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 6
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !TextBlock
+                Id: 7c944fcd-4429-4838-a571-618d20179ace
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 51.996826
+                Height: 15.0
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Top: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Refresh
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !ScrollViewer
+                Id: 7cd82045-0c56-4470-856d-febb86ea32a5
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 203.00002
+                Height: 335.9929
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 130.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_scrollview
+                Padding: {}
+                ScrollBarColor: {R: 25, G: 25, B: 25, A: 255}
+                Content: !StackPanel ref!! 60dfd866-046c-4fa0-8d96-9a0d12fd0ac9
+        -   UIElement: !Button
+                Id: 81542eef-fb26-4c70-8374-6b0b9c7ca2fd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !TextBlock
+                Id: 8282711a-b229-45c9-9b37-a8075b90250f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 828ad6b7-1bfe-4340-b712-84a192d052a8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 196.0
+                Height: 25.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 785.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: hold_ctrl_helper_text
+                Text: 'Hold Ctrl: Up & Down'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: 83337092-9eed-4090-9787-d9924b172889
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Button
+                Id: 851b1377-a6e3-4e89-9c64-a9ddda889cd2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_copy_button
+                Content: !TextBlock ref!! f34a9fda-3cac-430e-b78f-fd8dc38fa6e8
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !Button
+                Id: 87f386a8-4d2e-40e0-8b23-fc54b36b0438
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_copy_button
+                Content: !TextBlock ref!! 2b29fee2-13ac-4dc0-80a7-421d505d7c77
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !Button
+                Id: 8bd6206f-ebd6-4dc1-99e4-718714fc2a05
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !TextBlock
+                Id: 8e23c338-db51-4853-aaf7-9d4ce61ff903
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !EditText
+                Id: 91e7f95e-6b3c-4b7f-863c-b90a6de76a17
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 77.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !TextBlock
+                Id: 91f1b155-299c-450b-b10a-97ee7befa617
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 120.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_title
+                Text: 'Z:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 91, G: 151, B: 205, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !EditText
+                Id: 92bedff3-558a-4a59-bda5-c7a4d0756b1c
+                DependencyProperties: {}
+                BackgroundColor: {R: 56, G: 65, B: 82, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 201.0
+                Height: 28.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 88.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: filter_input
+                Padding: {Left: 8.0, Top: 4.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: Filter entities...
+        -   UIElement: !ImageElement
+                Id: 9514b416-4379-403d-b54a-f2751cf5d6f8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 227.0001
+                Height: 530.0
+                HorizontalAlignment: Left
+                Margin: {Left: 11.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_objects_background
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 5
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !Button
+                Id: 99275c9e-e7c6-44fb-9736-6e30b8afeead
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !Button
+                Id: 99b850f4-5b45-4db5-88fc-ec7c1edc8c0c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_copy_button
+                Content: !TextBlock ref!! 555f7927-356b-4ab2-99f8-badcf3572417
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !TextBlock
+                Id: 9affe96e-072e-4581-906b-41a24f91364c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 205.0
+                Height: 25.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 340.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: selected_mode_text
+                Text: 'Hold Shift: Speed Control'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Canvas
+                Id: a0220e7c-ef19-4261-b10e-8a7820806094
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 221.0
+                Height: 87.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 15.0, Top: 61.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Position Axis
+                Children:
+                    dc7bab7f7dfdec77eeb44ea1b17287c2: !TextBlock ref!! bfe7bd2d-f1c1-43f8-af42-bab22da60f5a
+                    e5dce2ec8476f1d68fb77848ee41210d: !EditText ref!! ad305136-3fb2-4c77-b51c-59bdc1e379f6
+                    9ae1f403c58070f3fc64fd26f3bc66a6: !TextBlock ref!! 2d8bbc69-37d1-468f-b99e-470adc866904
+                    5febf89ee12cb35e078fd430fd7f9802: !EditText ref!! 91e7f95e-6b3c-4b7f-863c-b90a6de76a17
+                    fdcacce6f4b27cee60853578cdd814bb: !TextBlock ref!! 498cbbd4-8174-476b-b602-d21d55dc61e7
+                    a1f69992b72b83f085b99d0c76ac1e14: !EditText ref!! 2884c8d7-8bff-4311-bca2-75377f037240
+                    3a777b087f3ffceadb2921970ebc2580: !TextBlock ref!! d71b9a9b-f836-4e51-b661-5fd6097df728
+                    c1c4a75d4f5d13db43f3682f6e96157c: !Button ref!! 61051185-e3a5-45c6-bd5d-b27882da8656
+                    9d83942a5ab2ae5f58f56889b98a4cdb: !Canvas ref!! 1df11d36-5e24-4b2a-81b4-2c746a3bc61e
+                    bae8e9b9a55d1d103183b32b464fada5: !Canvas ref!! 6c0a0a65-267e-4aed-83d3-9da81d7594dd
+                    e0f658ec8546007dbfca373a0eeac303: !Canvas ref!! b455edc7-3359-478c-a6dd-225a77c57e38
+        -   UIElement: !Button
+                Id: a45f2406-d39d-43ef-a8a2-12f31bbc81da
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 5
+                Width: 72.0
+                Height: 29.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Bottom
+                Margin: {Left: 39.0, Top: 480.0, Bottom: 70.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: find_button
+                Padding: {Top: 6.0}
+                Content: !TextBlock ref!! c515a542-34aa-4243-a7a1-81e8f26e0d7b
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 14
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 13
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 14
+        -   UIElement: !ImageElement
+                Id: a5a0cc46-62a8-407f-abc2-020c8ef0e01d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 201.0
+                Height: 1.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 50.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: seperator
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 10
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !EditText
+                Id: aaae8599-7dd3-49ee-98bb-9c96022b5274
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 77.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !EditText
+                Id: ad305136-3fb2-4c77-b51c-59bdc1e379f6
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !Button
+                Id: af1f4959-e51e-4112-90ca-db8a12272784
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_copy_button
+                Content: !TextBlock ref!! 1d555973-2d01-404b-a2ae-8be31b3155db
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !Canvas
+                Id: b455edc7-3359-478c-a6dd-225a77c57e38
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 131.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! c1547c3a-9200-4abc-92fc-f0fea3b1e054
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! ec722664-0789-47a4-93c0-22c6211f7f2c
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 87f386a8-4d2e-40e0-8b23-fc54b36b0438
+        -   UIElement: !TextBlock
+                Id: ba23569f-1f10-4365-a5d4-9c9f532ecdbc
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 20.375
+                Height: 13.998047
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Top: -1.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: F11
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: bfe7bd2d-f1c1-43f8-af42-bab22da60f5a
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: position_title
+                Text: 'Position:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: c1547c3a-9200-4abc-92fc-f0fea3b1e054
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !TextBlock
+                Id: c1cee776-6176-4cfc-bf6d-a9b596ff2d14
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 20.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 62.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: selected_text
+                Text: 'Scene Entites:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 91, G: 151, B: 205, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: c33bf268-5114-4ec4-a512-0f565e8b4e5e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !ImageElement
+                Id: c3920ed9-8408-45db-8f17-9b7a646eba1c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 201.0
+                Height: 1.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 54.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: seperator
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 10
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !TextBlock
+                Id: c515a542-34aa-4243-a7a1-81e8f26e0d7b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 52.0
+                Height: 15.0
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Top: 1.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Find...
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !EditText
+                Id: c7dea7a1-be4f-4d98-a3bb-0876007ac292
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_x_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !EditText
+                Id: c8315e22-e403-4b68-9ccc-89ca6546786b
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !ImageElement
+                Id: cb293977-f324-47e1-abcb-e6a75f192a68
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 210.0
+                Height: 178.993
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 19.0, Top: 307.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: secondary_background
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 7
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !Button
+                Id: cd03e903-e114-413b-94d0-9f4c43ff84c4
+                DependencyProperties: {}
+                BackgroundColor: {R: 3, G: 3, B: 3, A: 0}
+                DrawLayerNumber: 2
+                Width: 30.0
+                Height: 30.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 9.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: move_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 2
+        -   UIElement: !Canvas
+                Id: cea04997-d2d6-4b72-a048-e814d5b866a9
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 66.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! de90382f-9f54-4e17-b222-c1cc0191e446
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 4b066af1-722c-4f92-8a81-d71df7b30992
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 7011e6f6-511a-45fc-ac30-05d159cd2c8f
+        -   UIElement: !Button
+                Id: d2c9237c-1dc1-4655-bd19-98abf53ca6fc
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !Button
+                Id: d45ea7ce-f08d-40b9-9e77-ac75884dd15f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 38.13965
+                Height: 24.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 179.86, Top: 20.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_copy_all
+                Padding: {Left: 0.0, Top: 0.0, Right: 0.0, Bottom: 0.0}
+                Content: !TextBlock ref!! e82a7b24-30ca-4d8f-ad0a-f1a2b6abfb6f
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 15
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 16
+        -   UIElement: !TextBlock
+                Id: d4b40b37-4887-4f83-afe0-b6143d2b289f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_x_title
+                Text: 'X:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 198, G: 73, B: 81, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Grid
+                Id: d56e9a14-e333-4f6c-b8d9-227e6eb11832
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 1280.0
+                Height: 720.0
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    8c1470638bd5835c8a088410e3b90273: !Canvas ref!! f73ad68b-11f6-4b0f-826f-b1e2dfa1cace
+                    b56955be1d55da47e77465b73431dbdb: !Canvas ref!! 568e6814-6311-4b76-b16a-e5c5f546be91
+                    a024b029b20aaaaeb47e7c493f693dcc: !Canvas ref!! 351d3c45-6cd5-4367-9c58-d60e3dbe5033
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !EditText
+                Id: d5f3e1f3-bcf9-4220-8611-ff7414bd2351
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 77.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !ImageElement
+                Id: d6f9fd54-f298-491b-9ca4-4d9c40036fa0
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 227.0001
+                Height: 530.0
+                HorizontalAlignment: Left
+                Margin: {Left: 11.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: entity_objects_background
+                Source: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 5
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !TextBlock
+                Id: d71b9a9b-f836-4e51-b661-5fd6097df728
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 18.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 120.0, Top: 24.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_title
+                Text: 'Z:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 91, G: 151, B: 205, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: dbdd7ae1-237f-4d23-bb68-13e679cfa685
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 209.00002
+                Height: 15.007019
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 488.993}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: components_title
+                Text: Arrows (Move)
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 12.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !EditText
+                Id: dc751a38-7c09-4a58-ac79-aaf0e8992963
+                DependencyProperties: {}
+                BackgroundColor: {R: 31, G: 41, B: 55, A: 255}
+                DrawLayerNumber: 5
+                CanBeHitByUser: true
+                Width: 40.0
+                Height: 22.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 134.0, Top: 21.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_edit
+                Padding: {Left: 8.0, Top: 2.0, Right: 8.0, Bottom: 8.0}
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 11.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
+                ActiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 3
+                InactiveImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 4
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: null
+                    CurrentFrame: 5
+                CaretColor: {R: 240, G: 240, B: 240, A: 255}
+                CaretWidth: 1.0
+                SelectionColor: {R: 240, G: 240, B: 240, A: 255}
+                IMESelectionColor: {R: 240, G: 255, B: 240, A: 255}
+                CaretFrequency: 1.0
+                Text: 0
+        -   UIElement: !Canvas
+                Id: dc7b5fae-46cd-4d5c-a5f9-9b4724a9b6ef
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 66.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! 1eaa2362-2d06-4e04-80b7-f6077bf80fe8
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! f181dac8-b580-4557-bd7e-31650d157eb2
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 99b850f4-5b45-4db5-88fc-ec7c1edc8c0c
+        -   UIElement: !Button
+                Id: de90382f-9f54-4e17-b222-c1cc0191e446
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_y_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !Canvas
+                Id: dec38aa4-fcf5-45b7-a6c7-1afe8e703cce
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 60.0
+                Height: 18.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 131.0, Top: 47.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_z_group
+                Children:
+                    9580784c7797f1394118a79a150d852d: !Button ref!! 186f61c8-092c-4c8f-955c-386d2224837b
+                    beb10dfdef86079528a4b86c2237570c: !Button ref!! 72146174-5c1f-413e-8c21-5e973783442c
+                    a398fa3166a84115f0c789c05f545a46: !Button ref!! 6bf6936e-6c8d-4137-8115-afd41ea28bcc
+        -   UIElement: !TextBlock
+                Id: e132192d-b450-4816-92a9-84c969c2f800
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: e333b8d3-4f44-4f16-910b-e250784dd705
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 114.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_title
+                Text: 'Scale:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 14.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: e4736565-d79e-4561-a054-f5cc75f80998
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: rot_z_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !Button
+                Id: e766374d-67fe-4452-ba30-304696213efd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 27.0
+                Height: 16.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 17.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_y_copy_button
+                Content: !TextBlock ref!! e132192d-b450-4816-92a9-84c969c2f800
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 17
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 18
+        -   UIElement: !TextBlock
+                Id: e82a7b24-30ca-4d8f-ad0a-f1a2b6abfb6f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 19.139648
+                Height: 12.00293
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 12.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Button
+                Id: ec2b2107-77cf-4697-958c-98d9f1160b38
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 46.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_x_neg_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+        -   UIElement: !Button
+                Id: ec722664-0789-47a4-93c0-22c6211f7f2c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: pos_z_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !ScrollViewer
+                Id: f0e13696-efa6-44d8-bafd-aa27b9269cb1
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 209.00002
+                Height: 178.99298
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 20.0, Top: 307.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Padding: {}
+                ScrollBarColor: {R: 25, G: 25, B: 25, A: 255}
+                Content: !StackPanel ref!! 150581ae-48b3-4f63-8064-8bc9d45c49e6
+        -   UIElement: !Button
+                Id: f181dac8-b580-4557-bd7e-31650d157eb2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 15.0
+                Height: 15.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: scale_y_plus_button
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 1
+        -   UIElement: !TextBlock
+                Id: f18bc89d-cd90-4737-aee8-6e085299bb4c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 14.0
+                Height: 25.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 766.0, Top: 14.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Pipe 2
+                Text: '|'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 16.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Button
+                Id: f1af2f6c-aa5c-4540-baa6-493c42d0d6fd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 11
+                Width: 40.0
+                Height: 30.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {Left: 187.0, Top: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: open_close_button
+                Content: !TextBlock ref!! ba23569f-1f10-4365-a5d4-9c9f532ecdbc
+                PressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 11
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 11
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 4bd866c7-66a4-4883-8e84-87566074334b:Happenstance/Dev Editor/Source/editor_tex_sheet
+                    CurrentFrame: 11
+        -   UIElement: !TextBlock
+                Id: f34a9fda-3cac-430e-b78f-fd8dc38fa6e8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 10.875
+                Height: 6.3215733
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 1.0, Bottom: 2.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: copy
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 9.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Canvas
+                Id: f73ad68b-11f6-4b0f-826f-b1e2dfa1cace
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 997.0
+                Height: 54.0
+                VerticalAlignment: Top
+                Margin: {Left: 146.0, Top: 10.0, Right: 137.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: helper_bar_holder
+                Children:
+                    a443dc587b0809a4fcef34602a9c2bcc: !ImageElement ref!! 79f8ded1-fea0-4543-80b3-ac481437991b
+                    8ce8c45b7f41589bbb5a06fde17e740f: !Button ref!! 5e7861e3-e35b-423a-b76b-d1aac262ed7b
+                    8de313cc16734fca741fbd38937e5177: !TextBlock ref!! 3923d835-29e2-4c21-a6df-2dcc3bc0c709
+                    124ec0a288412c5a96f1f5c30b7d50fb: !TextBlock ref!! 9affe96e-072e-4581-906b-41a24f91364c
+                    4a852db544646d5e4157c934f3ec15c6: !TextBlock ref!! 40856cc1-3f50-41e5-8989-09253549ab79
+                    24822648031e7aa57bec874b7814a3ed: !TextBlock ref!! 33984be2-a544-460a-ba61-a76d321e3ab8
+                    831a1cd904e3180b3ccffbc8ade8e0dd: !TextBlock ref!! f18bc89d-cd90-4737-aee8-6e085299bb4c
+                    1d1dc56d3776028ca75fb2d3a51055f8: !TextBlock ref!! 828ad6b7-1bfe-4340-b712-84a192d052a8

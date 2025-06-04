@@ -1,0 +1,141 @@
+!SpriteSheet
+Id: 4bd866c7-66a4-4883-8e84-87566074334b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: UI
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    df298b2061747dc35b5f6d94a46f5611:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/subtraction_button_1.png
+        Name: subtraction_button_1
+        TextureRegion: {X: 0, Y: 0, Width: 225, Height: 225}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    1b53b0c5a35053e2e810141670479146:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/addition_button_1.png
+        Name: addition_button_1
+        TextureRegion: {X: 0, Y: 0, Width: 225, Height: 225}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    215dc55624a89c90db19d1985b1a13c7:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/move_icon.png
+        Name: move_icon
+        TextureRegion: {X: 0, Y: 0, Width: 65, Height: 65}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    7f9466734a08f4520f10e22d54ad7438:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/object_highlight.png
+        Name: object_highlight
+        TextureRegion: {X: 0, Y: 0, Width: 648, Height: 97}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    32f55e44abe88d238909df604bdbd011:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/panel_background_1.png
+        Name: panel_background_1
+        TextureRegion: {X: 0, Y: 0, Width: 821, Height: 1517}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6abf261e58e9903ce2502cdabb5454a2:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/panel_background_2.png
+        Name: panel_background_2
+        TextureRegion: {X: 0, Y: 0, Width: 776, Height: 1565}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    f3624bf6705b4bccf30cb1ededfcd362:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/panel_background_3.png
+        Name: panel_background_3
+        TextureRegion: {X: 0, Y: 0, Width: 2121, Height: 88}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    8cd45fbfd4fdee0612fc0c6574cc37cd:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/panel_secondary_background_1.png
+        Name: panel_secondary_background_1
+        TextureRegion: {X: 0, Y: 0, Width: 765, Height: 1066}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    0136c89949800abd722a537f2444ea85:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/panel_secondary_background_2.png
+        Name: panel_secondary_background_2
+        TextureRegion: {X: 0, Y: 0, Width: 711, Height: 503}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    93d889f17592abf6e34ce609c992816b:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/seperator.png
+        Name: seperator
+        TextureRegion: {X: 0, Y: 0, Width: 724, Height: 1}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    e531d5949b583ad55db5511b96760912:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/seperator_1.png
+        Name: seperator_1
+        TextureRegion: {X: 0, Y: 0, Width: 724, Height: 1}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6aa4c3c2b9a9b4c400a70fc9d30ac3f7:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_1.png
+        Name: small_button_1
+        TextureRegion: {X: 0, Y: 0, Width: 171, Height: 71}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    3918d3d254de324b12fb2ccfd4a28948:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_1_clicked.png
+        Name: small_button_1_clicked
+        TextureRegion: {X: 0, Y: 0, Width: 171, Height: 71}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    ecbadd7c46773cbbc3d2148dd6c0afac:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_2.png
+        Name: small_button_2
+        TextureRegion: {X: 0, Y: 0, Width: 171, Height: 71}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    b8b6a655cf7b3b972a4a4cd8a9a7026f:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_2_clicked.png
+        Name: small_button_2_clicked
+        TextureRegion: {X: 0, Y: 0, Width: 171, Height: 71}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    715b0322c6cffff8067feb5d989bf63c:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_3.png
+        Name: small_button_3
+        TextureRegion: {X: 0, Y: 0, Width: 158, Height: 68}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6938f9b5a29768635b6fa3b8e1132830:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_3_clicked.png
+        Name: small_button_3_clicked
+        TextureRegion: {X: 0, Y: 0, Width: 158, Height: 68}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    39e6039a65315c8fa4ecf52d717a0c5e:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_4.png
+        Name: small_button_4
+        TextureRegion: {X: 0, Y: 0, Width: 75, Height: 34}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    b19517215c066626f638c588805e0b71:
+        Source: !file ../../../../Assets/Happenstance/Dev Editor/Source/Textures/small_button_4_clicked.png
+        Name: small_button_4_clicked
+        TextureRegion: {X: 0, Y: 0, Width: 75, Height: 34}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
