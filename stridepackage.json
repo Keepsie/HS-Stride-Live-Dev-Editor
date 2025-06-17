@@ -1,0 +1,15 @@
+{
+  "name": "HS-Stride-Live-Dev-Editor",
+  "version": "0.5.0",
+  "description": "An in-game development toolkit for Stride Engine that enables rapid iteration, live testing, and precise object manipulation during gameplay.",
+  "author": "Happenstance Games",
+  "tags": [
+    "dev-tools"
+  ],
+  "stride_version": "4.2.0+",
+  "created": "2025-06-17T15:00:40Z",
+  "download_url": "https://github.com/Keepsie/HS-Stride-Live-Dev-Editor/releases/download/0.5.0/HS-Stride-Live-Dev-Editor-0.5.0.stridepackage",
+  "homepage": "https://github.com/Keepsie/HS-Stride-Live-Dev-Editor",
+  "repository": "https://github.com/Keepsie/HS-Stride-Live-Dev-Editor",
+  "license": "MIT"
+}
