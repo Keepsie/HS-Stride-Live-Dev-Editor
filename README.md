@@ -25,34 +25,19 @@ HS Dev Editor solves the time-consuming cycle of switching between Stride Studio
 
 ## 🚀 Installation
 
-Video: https://youtu.be/ijOLUY7A5RE
+### Recommended: One-Click Installation
+1. **Download [HS Stride Packer](https://github.com/Keepsie/HS-Stride-Packer)**
+2. **Download** this library's `.stridepackage` file from [Releases](https://github.com/Keepsie/HS-Stride-Live-Dev-Editor/releases)
+3. **Import** using HS Stride Packer - everything installs automatically!
+
+### Alternative: Manual Installation
+- Code is open source - you can still copy files manually if preferred
+- See legacy installation instructions 
+- HS Stride Packer handles all dependencies and setup automatically
 
 ### Prerequisites
-1. Stride Engine 4.2.0.2381 or newer
-2. **Happenstance Stride Engine Core** (required - install first)
-
-### Quick Setup
-In general installing is basic drag and drops
-1. **Install Dependencies:** Download and install [Happenstance Stride Engine Core](https://github.com/Keepsie/HS-Stride-Engine-Core) first (*REQUIRED)
-2. **Copy Code:** Add DevEditor scripts to `Code/Happenstance/DevEditor/`  
-3. **Copy Assets:** Add DevEditor assets to `Assets/Happenstance/DevEditor/`
-4. **Scene Setup:** Drag the DevEditorManager prefab into your scene
-5. **Optional:** Add DevCamera prefab for free-fly camera functionality
-
-### Folder Structure
-
-### Manual Setup
-If you prefer manual setup or need custom configuration:
-
-```csharp
-// Create entity with DevEditorManager
-var editorEntity = new Entity("DevEditorManager");
-editorEntity.Add(new DevEditorManager());
-
-// Add UI entities as children (see prefab structure)
-// - DevEditorUI (with UI components)
-// - DevCamera (optional, for free-fly camera)
-```
+- Stride Engine 4.2.0.2381 or newer
+- HS Stride Packer (for easy installation)
 
 ### ⚠️ IMPORTANT: Input Integration
 
