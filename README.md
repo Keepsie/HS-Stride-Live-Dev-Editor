@@ -45,8 +45,8 @@ HS Dev Editor solves the time-consuming cycle of switching between Stride Studio
 
 ```csharp
 // Get references to the dev tools
-var devEditorManager = EntityFinder.FindAllComponents<DevEditorManager>().FirstOrDefault();
-var devCamera = EntityFinder.FindAllComponents<DevCamera>().FirstOrDefault();
+var devEditorManager = Entity.Scene.FindAllComponents_HS<DevEditorManager>().FirstOrDefault();
+var devCamera = Entity.Scene.FindAllComponents_HS<DevCamera>().FirstOrDefault();
 
 // Check before processing your input
 if (!devEditorManager?.DevEditorActive && !devCamera?.DevCameraActive)
@@ -239,7 +239,7 @@ public class CustomPanel : HSSyncScript
     
     public override void OnStart()
     {
-        _editorManager = EntityFinder.FindAllComponents<DevEditorManager>().FirstOrDefault();
+        _editorManager = Entity.Scene.FindAllComponents_HS<DevEditorManager>().FirstOrDefault();
         _editorManager.OnEntitySelected += OnEntitySelected;
     }
 }
