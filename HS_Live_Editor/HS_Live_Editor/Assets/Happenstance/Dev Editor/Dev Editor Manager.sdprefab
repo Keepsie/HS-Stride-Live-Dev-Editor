@@ -1,0 +1,74 @@
+!PrefabAsset
+Id: 57b4e765-d0a0-44b3-88b5-f47aa490e959
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! aae26c84-bfe7-4349-9a56-6954cdef2e91
+    Parts:
+        -   Entity:
+                Id: 6d234b3b-cb7d-4394-a7e0-09d8e3565111
+                Name: DevCamera
+                Components:
+                    90c86d429f33f6013a913d2f86267e04: !TransformComponent
+                        Id: 62cf016f-d56f-43a6-9431-d50c54ae2613
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    4c2fd08ed89c57f5b7b88eabb3422a2b: !CameraComponent
+                        Id: 132e3ba9-adfa-4cc9-81dd-508ba6a68835
+                        Name: null
+                        Projection: Perspective
+                        Slot: cba82b6c-2e07-4c7f-9d38-2ae6f41386d4
+                    b1e9bb8c26f7e9bed996fd329a2ab732: !Happenstance.SE.DevEditor.Core.DevCamera
+                        Id: dce654e2-1307-410b-99ca-7f66ce16a7b5
+                        StartDisabled: false
+                        MovementSpeed: 10.0
+                        FastMovementSpeed: 25.0
+                        SlowMovementSpeed: 2.0
+                        RotationSpeed: 5.0
+                        MainCameraEntity: null
+        -   Entity:
+                Id: 76060f31-79f8-4854-b595-d51242b8ca33
+                Name: DevEditorUI
+                Components:
+                    b80f46fb46b6493edafae49f23a087da: !TransformComponent
+                        Id: 5a42970e-f808-4700-b5d2-2678f3c641c2
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    297b3cd646cd3526f041f4f61a3efdda: !UIComponent
+                        Id: f1795fda-e064-4ac6-9053-e125982ac0b6
+                        Enabled: false
+                        Page: 275be4a6-767c-425e-b0e2-68f245063311:Happenstance/Dev Editor/Source/dev_editor_page
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
+                    3fa0d50ec647098a1cc9cf372cdc250e: !Happenstance.SE.DevEditor.UI.DevSceneInspector
+                        Id: fdf2aac8-7a6c-48f5-9e4b-2aa3d0b72e94
+                        StartDisabled: false
+                    20fd2d382ad5925207a97093189e96ba: !Happenstance.SE.DevEditor.UI.DevSceneHelper
+                        Id: 9a836e26-1932-4ca3-b126-5a8e382dbac9
+                        StartDisabled: false
+                    0998e809c6491557f82f2db41af94a86: !Happenstance.SE.DevEditor.UI.DevSceneEntities
+                        Id: 5a5160f1-9a02-4c7f-a6fb-d00c226d2ed9
+                        StartDisabled: false
+        -   Entity:
+                Id: aae26c84-bfe7-4349-9a56-6954cdef2e91
+                Name: Dev Editor Manager
+                Components:
+                    3f6cd6de12404e31da98bbe8147beb75: !TransformComponent
+                        Id: f8bf2062-4d40-4850-9522-8b314f4bfb8b
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            6d29cb3e7a1e685013c347bfe6423d05: ref!! 5a42970e-f808-4700-b5d2-2678f3c641c2
+                            4527ef5e0f16af5d695865bf1df5e5f4: ref!! 62cf016f-d56f-43a6-9431-d50c54ae2613
+                    3b198ccec7903e103979d60564112a88: !Happenstance.SE.DevEditor.Core.DevEditorManager
+                        Id: d55f8ccc-64bd-4ae3-b28c-9b6f37190dc1
+                        StartDisabled: false
+                        SelectedEntity: null
+                        CurrentEditMode: Position
+                        ActiveAxis: X

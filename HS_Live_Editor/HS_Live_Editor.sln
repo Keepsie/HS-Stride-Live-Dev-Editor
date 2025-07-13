@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HS_Live_Editor.Windows", "HS_Live_Editor.Windows\HS_Live_Editor.Windows.csproj", "{3681E958-E800-45DB-A93A-629C8E71C227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HS_Live_Editor", "HS_Live_Editor\HS_Live_Editor.csproj", "{BF31008E-0237-4FB7-A0A3-C3D49991997E}"
+EndProject
+Global
+EndGlobal
