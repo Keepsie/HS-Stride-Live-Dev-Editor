@@ -1,10 +1,6 @@
 # HS Live Dev Editor for Stride
 
-An in-game development toolkit for Stride Engine that enables rapid iteration, live testing, and precise object manipulation during gameplay.
-
-Things to keep in mind: the dev editor is a live tool, so data isn't persistent. You should test, copy values you need, and then update them in Game Studio.
-
-Consider implementing [Happenstance Stride Dev Console](https://github.com/Keepsie/HS-Stride-Dev-Console) to expand functionality.
+Live runtime editor for Stride Game Engine. Edit transforms, test changes, and manipulate entities during gameplay without stopping to switch back to Game Studio.
 
 ## 🎯 Overview
 
@@ -260,10 +256,6 @@ When used with Happenstance Dev Console, additional functionality becomes availa
 - Dev Console: Entity creation, spawning, advanced operations
 - Dev Editor: Transform manipulation, fine-tuning, testing
 - Combined: Powerful development environment
-
-## 🤝 Contributing
-
-You're free to branch and modify this project however you want. If you create a pull request for something that would benefit everyone, I'll consider merging it.
 
 **Expectations:** This tool was primarily built to make my own development easier and shared to help other developers. Don't expect much, if any, formal support. I'll fix bugs and add features as I encounter them while working on games, but don't expect regular updates when I'm not actively developing.
 
