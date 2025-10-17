@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Stride.Engine;
 
 namespace Happenstance.SE.DevEditor.Core
 {
@@ -141,6 +142,34 @@ namespace Happenstance.SE.DevEditor.Core
             {
                 Console.WriteLine($"  {i}: {redoArray[i].Description} -> {redoArray[i].TargetEntity?.Name}");
             }
+        }
+
+        /// <summary>
+        /// Gets all unique entities that have been modified in the history (both undo and redo stacks)
+        /// </summary>
+        public List<Entity> GetAllModifiedEntities()
+        {
+            var entities = new HashSet<Entity>();
+
+            // Collect from undo stack
+            foreach (var command in _undoStack)
+            {
+                if (command.TargetEntity != null)
+                {
+                    entities.Add(command.TargetEntity);
+                }
+            }
+
+            // Collect from redo stack
+            foreach (var command in _redoStack)
+            {
+                if (command.TargetEntity != null)
+                {
+                    entities.Add(command.TargetEntity);
+                }
+            }
+
+            return entities.ToList();
         }
     }
 }

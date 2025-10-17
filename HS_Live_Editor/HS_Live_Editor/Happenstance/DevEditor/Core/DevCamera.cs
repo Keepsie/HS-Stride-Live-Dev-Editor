@@ -14,8 +14,8 @@ namespace Happenstance.SE.DevEditor.Core
     public class DevCamera : HSSyncScript
     {
         // Settings
-        public float MovementSpeed = 10.0f;
-        public float FastMovementSpeed = 25.0f;
+        public float MovementSpeed = 1.0f;
+        public float FastMovementSpeed = 5.0f;
         public float SlowMovementSpeed = 2.0f;
         public float RotationSpeed = 5f;
 
@@ -77,7 +77,7 @@ namespace Happenstance.SE.DevEditor.Core
             if (_mainCameraComponent == null)
             {
                 Logger.Error("DevCamera: No main camera found and none assigned. Destroying dev camera.");
-                Destroy();
+                Entity.Destroy_HS();
                 return;
             }
             else
@@ -106,7 +106,7 @@ namespace Happenstance.SE.DevEditor.Core
         protected override void OnUpdate()
         {
             // Check for toggle
-            if (Input.IsKeyPressed(Keys.F10))
+            if (Input.IsKeyPressed(Keys.F10) && _editorManager.DevEditorActive)
             {
                 ToggleDevCamera();
             }
@@ -172,13 +172,18 @@ namespace Happenstance.SE.DevEditor.Core
 
             if (Input.IsKeyDown(Keys.LeftCtrl) && Input.IsKeyDown(Keys.LeftShift) && Input.IsKeyPressed(Keys.F))
             {
-                AlignSelectedEntityWithView();
+                AlignSelectedEntityWithView(false);
+            }
+
+            if (Input.IsKeyDown(Keys.LeftCtrl) && Input.IsKeyDown(Keys.LeftShift) && Input.IsKeyPressed(Keys.R))
+            {
+                AlignSelectedEntityWithView(true);
             }
 
             UpdateMovement();
         }
 
-        private void AlignSelectedEntityWithView()
+        private void AlignSelectedEntityWithView(bool reverseRotation = false)
         {
             if (_editorManager == null || _editorManager.SelectedEntity == null)
             {
@@ -187,36 +192,64 @@ namespace Happenstance.SE.DevEditor.Core
             }
 
             Entity targetEntity = _editorManager.SelectedEntity;
+            if (targetEntity == null) return;
 
-            // Get current world position for undo
+            // Get current world position for undo using HS helper
             var oldWorldPosition = targetEntity.Transform.GetWorldPosition_HS();
-            var oldRotation = targetEntity.Transform.Rotation;
+            var oldRotation = targetEntity.Transform.GetWorldRotation_HS();
 
-            // Get camera's world position
+            // Get desired world position and rotation from camera using HS helper
             var cameraWorldPos = Entity.Transform.GetWorldPosition_HS();
+            var cameraWorldRotation = Entity.Transform.GetWorldRotation_HS();
 
-            // Set entity to camera's world position and rotation
-            // Note: We're setting local position to world position - this works for root objects
-            // For child objects, you might need more complex logic to convert world->local
-            targetEntity.Transform.Position = cameraWorldPos;
-            targetEntity.Transform.Rotation = Entity.Transform.Rotation;
+            // Apply 180-degree Y rotation offset for Blender models if requested
+            if (reverseRotation)
+            {
+                var euler = cameraWorldRotation.ToEulerAngles_HS();
+                euler.X = -euler.X;  // Flip pitch (invert up/down)
+                euler.Y += 180f;     // Rotate 180 degrees around Y (turn around)
+                cameraWorldRotation = HSTransform.FromEulerAngles_HS(euler);
+            }
+
+            // Use manual coordinate calculation to bypass Stride's broken system
+            if (targetEntity.Transform.Parent != null)
+            {
+                var (localPos, localRot) = targetEntity.Transform.Parent.CalculateLocalTransform_HS(cameraWorldPos, cameraWorldRotation);
+                targetEntity.Transform.Position = localPos;
+                targetEntity.Transform.Rotation = localRot;
+
+                Logger.Info($"Aligned {targetEntity.Name} to camera{(reverseRotation ? " (reversed)" : "")} - Parent: {targetEntity.Transform.Parent.Entity.Name}, Local Pos: {localPos}");
+            }
+            else
+            {
+                // No parent, can set world coordinates directly
+                targetEntity.Transform.Position = cameraWorldPos;
+                targetEntity.Transform.Rotation = cameraWorldRotation;
+
+                Logger.Info($"Aligned {targetEntity.Name} to camera{(reverseRotation ? " (reversed)" : "")} - Root entity, World Pos: {cameraWorldPos}");
+            }
 
             // Create undo command if the editor manager has history
             if (_editorManager.History != null)
             {
+                var newWorldPos = targetEntity.Transform.GetWorldPosition_HS();
                 var command = TransformCommand.CreatePositionRotationCommand(
                     targetEntity,
-                    oldWorldPosition, cameraWorldPos,
+                    oldWorldPosition, newWorldPos,
                     oldRotation, targetEntity.Transform.Rotation,
                     "Align with View");
                 _editorManager.History.StoreChange(command);
             }
-
-            Logger.Info($"Aligned {targetEntity.Name} with camera view");
         }
 
         private void UpdateMovement()
         {
+            // Don't process movement if user is typing in filter field
+            if (_editorManager != null && _editorManager.IsFilterInputActive)
+            {
+                return;
+            }
+
             // Get input
             bool moveForward = Input.IsKeyDown(Keys.W);
             bool moveBackward = Input.IsKeyDown(Keys.S);
@@ -263,20 +296,46 @@ namespace Happenstance.SE.DevEditor.Core
 
             Entity target = _editorManager.SelectedEntity;
 
-            // Get world position
-            Vector3 targetPos = target.Transform.GetWorldPosition_HS();
+            // Get TRUE world position using HS helper (handles parented entities correctly)
+            Vector3 targetWorldPos = target.Transform.GetWorldPosition_HS();
 
-            // Position camera to look at the target
-            Vector3 offset = new Vector3(0, 2, 5);
-            Entity.Transform.Position = targetPos + offset;
+            // Get current camera world position to calculate direction
+            Vector3 currentCameraWorldPos = Entity.Transform.GetWorldPosition_HS();
 
-            // Look at the target
-            Entity.Transform.LookAt_HS(targetPos);
+            // Calculate direction from camera to target
+            Vector3 directionToTarget = targetWorldPos - currentCameraWorldPos;
+            float distanceToTarget = directionToTarget.Length();
+
+            // Move camera closer to target
+            Vector3 desiredWorldPos;
+            if (distanceToTarget > 0.8f)
+            {
+                directionToTarget.Normalize();
+                desiredWorldPos = targetWorldPos - (directionToTarget * 0.8f);
+            }
+            else
+            {
+                // Already close enough, don't move
+                desiredWorldPos = currentCameraWorldPos;
+            }
+
+            // Set position - handle parented camera
+            if (Entity.Transform.Parent != null)
+            {
+                Entity.Transform.Position = Entity.Transform.Parent.WorldToLocal_HS(desiredWorldPos);
+            }
+            else
+            {
+                Entity.Transform.Position = desiredWorldPos;
+            }
+
+            // Look at the target's actual world position
+            Entity.Transform.LookAt_HS(targetWorldPos);
 
             // Update yaw/pitch for smooth control
             Reset();
 
-            Logger.Info($"Dev camera focused on {target.Name} at world pos: {targetPos}");
+            Logger.Info($"Dev camera focused on {target.Name} at world pos: {targetWorldPos}");
         }
 
         public void ToggleDevCamera()

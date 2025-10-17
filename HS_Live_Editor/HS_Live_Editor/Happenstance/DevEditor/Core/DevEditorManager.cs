@@ -9,6 +9,7 @@ using Stride.Engine;
 using Stride.Input;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Happenstance.SE.DevEditor.Core
@@ -84,6 +85,9 @@ namespace Happenstance.SE.DevEditor.Core
         //Dev Cam
         private DevCamera _devCamera;
 
+        //Dev UI Components
+        private DevSceneEntities _devSceneEntities;
+
         /// <summary>
         /// Indicates whether the development editor is currently active and handling input.
         /// When true, the editor is processing keyboard input for entity manipulation (arrow keys, undo/redo, etc.).
@@ -91,6 +95,11 @@ namespace Happenstance.SE.DevEditor.Core
         /// Systems should suspend input handling for: arrow keys, Ctrl+Z/Y, R/S keys, and F11.
         /// </summary>
         public bool DevEditorActive { get; private set; }
+
+        /// <summary>
+        /// Returns true if the filter input field currently has focus (user is typing in search)
+        /// </summary>
+        public bool IsFilterInputActive => _devSceneEntities != null && _devSceneEntities.IsFilterInputActive;
 
 
         protected override void OnAwake()
@@ -103,8 +112,9 @@ namespace Happenstance.SE.DevEditor.Core
             }
 
             _devCamera = Entity.Scene.FindAllComponents_HS<DevCamera>().FirstOrDefault();
-            
-            if (_editorUIEntity == null)
+            _devSceneEntities = Entity.Scene.FindAllComponents_HS<DevSceneEntities>().FirstOrDefault();
+
+            if (_devCamera == null)
             {
                 Logger.Warning("Dev Camera entity not found. features will not be available.");
             }
@@ -128,6 +138,7 @@ namespace Happenstance.SE.DevEditor.Core
             if (_activateEditor)
             {
                 HandleUndoRedoInput();
+                HandleExportInput();
             }
 
             // Handle keyboard manipulation if entity is selected
@@ -177,6 +188,16 @@ namespace Happenstance.SE.DevEditor.Core
             }
         }
 
+        private void HandleExportInput()
+        {
+            bool ctrlHeld = Input.IsKeyDown(Keys.LeftCtrl) || Input.IsKeyDown(Keys.RightCtrl);
+
+            if (ctrlHeld && Input.IsKeyPressed(Keys.P))
+            {
+                ExportModifiedEntitiesToFile();
+            }
+        }
+
         private void HandleKeyboardInput()
         {
             // Determine edit mode based on held keys
@@ -189,12 +210,12 @@ namespace Happenstance.SE.DevEditor.Core
             bool verticalModifier = Input.IsKeyDown(Keys.LeftCtrl) || Input.IsKeyDown(Keys.RightCtrl);
 
             // Base movement speed
-            float baseSpeed = 0.05f; // Default movement step
+            float baseSpeed = 0.01f; // Default movement step
 
             // Adjust speed based on modifiers
             float effectiveSpeed = baseSpeed;
             if (fastModifier) effectiveSpeed *= 2.3f;
-            if (slowModifier) effectiveSpeed *= 0.05f;
+            if (slowModifier) effectiveSpeed *= 0.25f;
 
             // Handle arrow keys for manipulation
             bool useRelativeMovement = _devCamera?.DevCameraActive == true;
@@ -367,7 +388,7 @@ namespace Happenstance.SE.DevEditor.Core
             if (_selectedEntity == null) return;
 
             // Apply a rotation speed multiplier - make rotation faster
-            float rotationMultiplier = 7.0f;
+            float rotationMultiplier = 50.0f;
             delta.X *= rotationMultiplier;
             delta.Y *= rotationMultiplier;
 
@@ -555,6 +576,13 @@ namespace Happenstance.SE.DevEditor.Core
             _activateEditor = newState;
             DevEditorActive = newState;
 
+            // When turning off editor, also turn off dev camera if it's active
+            if (!newState && _devCamera != null && _devCamera.DevCameraActive)
+            {
+                _devCamera.ToggleDevCamera();
+                Logger.Info("Auto-disabled dev camera when editor was closed");
+            }
+
             Logger.Info($"DevEditor {(newState ? "enabled" : "disabled")}");
         }
 
@@ -598,6 +626,58 @@ namespace Happenstance.SE.DevEditor.Core
         public void PrintHistoryDebug()
         {
             _editorHistory.PrintHistory();
+        }
+
+        public void ExportModifiedEntitiesToFile()
+        {
+            try
+            {
+                // Get all unique entities from history
+                var modifiedEntities = _editorHistory.GetAllModifiedEntities();
+
+                if (modifiedEntities.Count == 0)
+                {
+                    Logger.Warning("No modified entities to export");
+                    return;
+                }
+
+                // Build the export content
+                var timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                var lines = new List<string>();
+
+                lines.Add($"// DevEditor Session Export - {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+                lines.Add($"// Modified Entities: {modifiedEntities.Count}");
+                lines.Add("");
+
+                foreach (var entity in modifiedEntities)
+                {
+                    if (entity == null || entity.Scene == null) continue; // Skip destroyed entities
+
+                    var pos = entity.Transform.Position;
+                    var rot = entity.Transform.GetEulerAngles_HS();
+                    var scale = entity.Transform.Scale;
+
+                    lines.Add($"{entity.Name}:");
+                    lines.Add($"  Position({pos.X:0.00}, {pos.Y:0.00}, {pos.Z:0.00})");
+                    lines.Add($"  Rotation({rot.X:0.00}, {rot.Y:0.00}, {rot.Z:0.00})");
+                    lines.Add($"  Scale({scale.X:0.00}, {scale.Y:0.00}, {scale.Z:0.00})");
+                    lines.Add("");
+                }
+
+                // Get desktop path
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string fileName = $"DevEditor_Export_{timestamp}.txt";
+                string filePath = Path.Combine(desktopPath, fileName);
+
+                // Write to file
+                File.WriteAllLines(filePath, lines);
+
+                Logger.Info($"Exported {modifiedEntities.Count} entities to: {fileName}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to export entities: {ex.Message}");
+            }
         }
 
 
