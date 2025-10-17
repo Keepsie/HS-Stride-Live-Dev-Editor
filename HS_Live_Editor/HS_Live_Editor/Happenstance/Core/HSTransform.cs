@@ -287,7 +287,7 @@ namespace Happenstance.SE.Core
 
         /// <summary>
         /// Gets world position without forcing update (faster)
-        /// Use when you know the world matrix is already current
+        /// Use only when getting something static. Do not use for tracking player or something moving use normal one.
         /// </summary>
         /// <param name="transform">Transform to get world position from</param>
         /// <returns>World position</returns>
@@ -295,6 +295,19 @@ namespace Happenstance.SE.Core
         {
             if (transform == null) return Vector3.Zero;
             return transform.WorldMatrix.TranslationVector;
+        }
+
+        /// <summary>
+        /// Forces world matrix update and returns world rotation
+        /// Useful when you need the absolute latest rotation
+        /// </summary>
+        /// <param name="transform">Transform to get world rotation from</param>
+        /// <returns>World rotation</returns>
+        public static Quaternion GetWorldRotation_HS(this TransformComponent transform)
+        {
+            if (transform == null) return Quaternion.Identity;
+            transform.UpdateWorldMatrix();
+            return Quaternion.RotationMatrix(transform.WorldMatrix);
         }
 
         /// <summary>
@@ -360,6 +373,142 @@ namespace Happenstance.SE.Core
         {
             if (transform == null || targetEntity == null) return;
             transform.SmoothLookAt_HS(targetEntity.Transform, speed, deltaTime, worldUp);
+        }
+
+        // ================== PARENTING UTILITIES ==================
+
+        /// <summary>
+        /// Safely unparents a transform while preserving its world position
+        /// Fixes Stride's issue where unparenting treats local position as world position
+        /// </summary>
+        /// <param name="transform">Transform to unparent</param>
+        public static void UnparentPreserveWorld_HS(this TransformComponent transform)
+        {
+            if (transform == null || transform.Parent == null) return;
+
+            // Store current world position and scene reference
+            var worldPos = transform.GetWorldPosition_HS();
+            var scene = transform.Entity.Scene;
+
+            // Unparent (this breaks world position in Stride)
+            transform.Parent = null;
+
+            // Restore correct world position
+            transform.Position = worldPos;
+
+            // Add back to scene root entities if not already there
+            if (scene != null && !scene.Entities.Contains(transform.Entity))
+            {
+                scene.Entities.Add(transform.Entity);
+            }
+        }
+
+        /// <summary>
+        /// Sets parent while maintaining current world position
+        /// Item will appear in same world location after parenting
+        /// </summary>
+        /// <param name="transform">Transform to parent</param>
+        /// <param name="newParent">New parent transform</param>
+        public static void SetParentPreserveWorld_HS(this TransformComponent transform, TransformComponent newParent)
+        {
+            if (transform == null || newParent == null) return;
+            // Store current world position
+            var worldPos = transform.GetWorldPosition_HS();
+
+            // Set parent
+            transform.Parent = newParent;
+
+            // Calculate local position using the new WorldToLocal method
+            transform.Position = newParent.WorldToLocal_HS(worldPos);
+        }
+        
+        /// <summary>
+        /// Converts a world space position to the local space of this transform.
+        /// </summary>
+        /// <param name="transform">The parent transform defining the local space.</param>
+        /// <param name="worldPosition">The world position to convert.</param>
+        /// <returns>The position in local space.</returns>
+        public static Vector3 WorldToLocal_HS(this TransformComponent transform, Vector3 worldPosition)
+        {
+            transform.UpdateWorldMatrix();
+            Matrix.Invert(ref transform.WorldMatrix, out var inverseWorldMatrix);
+            Vector3.Transform(ref worldPosition, ref inverseWorldMatrix, out Vector3 localPosition);
+            return localPosition;
+        }
+
+        /// <summary>
+        /// Converts a local space position of this transform to a world space position.
+        /// </summary>
+        /// <param name="transform">The parent transform defining the local space.</param>
+        /// <param name="localPosition">The local position to convert.</param>
+        /// <returns>The position in world space.</returns>
+        public static Vector3 LocalToWorld_HS(this TransformComponent transform, Vector3 localPosition)
+        {
+            transform.UpdateWorldMatrix();
+            Vector3.Transform(ref localPosition, ref transform.WorldMatrix, out Vector3 worldPosition);
+            return worldPosition;
+        }
+
+        /// <summary>
+        /// Converts a world space rotation to the local space of this transform.
+        /// </summary>
+        /// <param name="transform">The parent transform defining the local space.</param>
+        /// <param name="worldRotation">The world rotation to convert.</param>
+        /// <returns>The rotation in local space.</returns>
+        public static Quaternion WorldToLocalRotation_HS(this TransformComponent transform, Quaternion worldRotation)
+        {
+            var parentWorldRotation = transform.GetWorldRotation_HS();
+            Quaternion.Invert(ref parentWorldRotation, out var invParentWorldRotation);
+            Quaternion.Multiply(ref invParentWorldRotation, ref worldRotation, out var localRotation);
+            return localRotation;
+        }
+
+        /// <summary>
+        /// Converts a local space rotation of this transform to a world space rotation.
+        /// </summary>
+        /// <param name="transform">The parent transform defining the local space.</param>
+        /// <param name="localRotation">The local rotation to convert.</param>
+        /// <returns>The rotation in world space.</returns>
+        public static Quaternion LocalToWorldRotation_HS(this TransformComponent transform, Quaternion localRotation)
+        {
+            var parentWorldRotation = transform.GetWorldRotation_HS();
+            Quaternion.Multiply(ref parentWorldRotation, ref localRotation, out var worldRotation);
+            return worldRotation;
+        }
+
+        /// <summary>
+        /// Calculates what local position and rotation would result in the target world transform relative to a parent.
+        /// </summary>
+        /// <param name="parent">The parent transform to calculate relative to</param>
+        /// <param name="targetWorldPos">The desired world position</param>
+        /// <param name="targetWorldRot">The desired world rotation</param>
+        /// <returns>Local position and rotation that would achieve the target world transform</returns>
+        public static (Vector3 localPos, Quaternion localRot) CalculateLocalTransform_HS(
+            this TransformComponent parent,
+            Vector3 targetWorldPos,
+            Quaternion targetWorldRot)
+        {
+            if (parent == null)
+            {
+                // No parent, world and local are the same
+                return (targetWorldPos, targetWorldRot);
+            }
+
+            // Get parent's world transform
+            var parentWorldPos = parent.GetWorldPosition_HS();
+            var parentWorldRot = parent.GetWorldRotation_HS();
+
+            // Calculate relative position
+            var relativePos = targetWorldPos - parentWorldPos;
+
+            // Rotate relative position by inverse of parent rotation to get local position
+            Quaternion.Invert(ref parentWorldRot, out var invParentRot);
+            Vector3.Transform(ref relativePos, ref invParentRot, out Vector3 localPos);
+
+            // Calculate relative rotation
+            Quaternion.Multiply(ref invParentRot, ref targetWorldRot, out var localRot);
+
+            return (localPos, localRot);
         }
 
         // ================== STATIC QUATERNION & MATH UTILITIES ==================
