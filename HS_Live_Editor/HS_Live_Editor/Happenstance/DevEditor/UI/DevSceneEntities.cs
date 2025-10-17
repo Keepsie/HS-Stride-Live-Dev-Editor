@@ -35,8 +35,13 @@ namespace Happenstance.SE.DevEditor.UI
         // State tracking
         private List<Entity> _sceneEntities = new List<Entity>();
         private List<Button> _entityButtons = new List<Button>();
+
+        /// <summary>
+        /// Returns true if the filter input has focus (user is typing)
+        /// </summary>
+        public bool IsFilterInputActive => _filterInput != null && _filterInput.IsSelectionActive;
         private bool _filterHasFocus = false;
-        private bool _filterWasCleared = false;
+        private bool _placeholderCleared = false;
 
         protected override void OnStart()
         {
@@ -161,25 +166,23 @@ namespace Happenstance.SE.DevEditor.UI
             // Check if filter input is now active
             bool isFilterActive = _filterInput.IsSelectionActive;
 
-            // If filter just gained focus and hasn't been cleared yet
-            if (isFilterActive && !_filterHasFocus && !_filterWasCleared)
+            // If filter just gained focus and placeholder hasn't been cleared yet
+            if (isFilterActive && !_filterHasFocus && !_placeholderCleared)
             {
-                // Clear the filter text
-                _filterInput.Text = string.Empty;
-                ApplyFilter(string.Empty);
-                _filterWasCleared = true;
+                // Check if current text is the placeholder text (case-insensitive)
+                if (_filterInput.Text.Equals("Filter entities...", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Clear the placeholder text
+                    _filterInput.Text = string.Empty;
+                    ApplyFilter(string.Empty);
+                    _placeholderCleared = true;
 
-                Logger.Debug("Filter input cleared on focus");
+                    Logger.Debug("Placeholder text cleared on first focus");
+                }
             }
 
             // Update focus state
             _filterHasFocus = isFilterActive;
-
-            // Reset the cleared flag when focus is lost
-            if (!isFilterActive)
-            {
-                _filterWasCleared = false;
-            }
         }
 
         private void OnEntitySelected(Entity entity)
@@ -295,7 +298,11 @@ namespace Happenstance.SE.DevEditor.UI
             };
 
             // Handle click to select entity
-            button.Click += (s, e) => _editorManager.SelectEntity(entity);
+            button.Click += (s, e) =>
+            {
+                _editorManager.SelectEntity(entity);
+                ClearAndUnfocusFilter();
+            };
 
             // Store reference in our tracking list
             _entityButtons.Add(button);
@@ -349,6 +356,16 @@ namespace Happenstance.SE.DevEditor.UI
                     ? Visibility.Visible
                     : Visibility.Collapsed;
             }
+        }
+
+        private void ClearAndUnfocusFilter()
+        {
+            if (_filterInput == null) return;
+
+            // Just deactivate the text input to remove focus (keep the filter text intact)
+            _filterInput.IsSelectionActive = false;
+
+            Logger.Debug("Filter input unfocused");
         }
 
         protected override void OnEnable()

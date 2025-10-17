@@ -77,17 +77,8 @@ namespace Happenstance.SE.Core
         }
 
 
-        public void Destroy()
-        {
-            Entity.Scene.Entities.Remove(Entity);
-        }
 
-        private void OnStartDisabled() => SetActive(false);
-
-        public void SetActive(bool active)
-        {
-            Entity.EnableAll(active, true);
-        }
+        private void OnStartDisabled() => Entity.SetActive_HS(false);
 
         public sealed override void Cancel()
         {

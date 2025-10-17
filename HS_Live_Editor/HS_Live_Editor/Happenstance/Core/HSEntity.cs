@@ -253,18 +253,34 @@ namespace Happenstance.SE.Core
         /// </summary>
         public static void ClearParent_HS(this Entity entity)
         {
+            if (entity?.Transform.Parent == null) return;
+
+            var scene = entity.Scene;
             entity.Transform.Parent = null;
+
+            // Add back to scene root entities if not already there
+            if (scene != null && !scene.Entities.Contains(entity))
+            {
+                scene.Entities.Add(entity);
+            }
         }
 
         /// <summary>
         /// Removes a specific child from this entity (makes it a root entity)
         /// </summary>
         /// <param name="child">The child entity to remove</param>
-        public static void ClearChild_HS(this Entity entity,Entity child)
+        public static void ClearChild_HS(this Entity entity, Entity child)
         {
             if (child != null && child.Transform.Parent == entity.Transform)
             {
+                var scene = child.Scene;
                 child.Transform.Parent = null;
+
+                // Add back to scene root entities if not already there
+                if (scene != null && !scene.Entities.Contains(child))
+                {
+                    scene.Entities.Add(child);
+                }
             }
         }
 
@@ -281,6 +297,22 @@ namespace Happenstance.SE.Core
             {
                 child.Parent = null;
             }
+        }
+
+        /// <summary>
+        /// Destroys this entity by removing it from the scene
+        /// </summary>
+        public static void Destroy_HS(this Entity entity)
+        {
+            if (entity?.Scene != null)
+            {
+                entity.Scene.Entities.Remove(entity);
+            }
+        }
+
+        public static void SetActive_HS(this Entity entity,bool active)
+        {
+            entity.EnableAll(active, true);
         }
 
         // ================== UI EXTENSIONS ==================

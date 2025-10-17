@@ -80,6 +80,7 @@ if (!devEditorManager?.DevEditorActive && !devCamera?.DevCameraActive)
 
 4. **Value Transfer**
    - Use copy buttons to get final transform values
+   - Or press `Ctrl+P` to export all modified entities to Desktop
    - Paste into Stride Studio Editor
    - Apply changes to your project files
 
@@ -89,9 +90,17 @@ if (!devEditorManager?.DevEditorActive && !devCamera?.DevCameraActive)
 ```
 1. Fly dev camera to desired position/angle
 2. Select your game camera entity
-3. Press Ctrl+Shift+F to align camera with view
+3. Press Ctrl+Shift+F to align camera with view (normal)
+   OR Ctrl+Shift+R for reversed orientation (Blender models)
 4. Copy rotation values from inspector
 5. Apply to your camera scripts or components
+```
+
+**Blender Model Alignment:**
+```
+Blender models often export with reversed forward direction.
+Use Ctrl+Shift+R instead of Ctrl+Shift+F to apply 180° Y-axis rotation
+automatically when aligning with camera view.
 ```
 
 **Level Design Iteration:**
@@ -148,7 +157,8 @@ Free-flying camera system with professional game development controls.
 - `Ctrl` - Slow/precise movement modifier
 - `Mouse Wheel` - Adjust movement speed dynamically
 - `F` - Focus on selected entity
-- `Ctrl+Shift+F` - Align selected entity with camera view
+- `Ctrl+Shift+F` - Align selected entity with camera view (normal orientation)
+- `Ctrl+Shift+R` - Align selected entity with camera view (reversed for Blender models)
 
 **Features:**
 - State persistence (remembers position when toggled)
@@ -207,12 +217,14 @@ Professional undo/redo with intelligent batching.
 - `Ctrl+Z` - Undo last action
 - `Ctrl+Y` - Redo last undone action
 - `Ctrl+Shift+Z` - Alternative redo
+- `Ctrl+P` - Export modified entities to file (saves to Desktop)
 
 **Features:**
 - Action batching (groups rapid keystrokes into single undo unit)
 - Configurable history size (default: 50 actions)
 - Descriptive action names for clear history
 - Automatic cleanup of old history
+- Export functionality captures all modified entities from session
 
 ## 🛠️ Extending the System
 
