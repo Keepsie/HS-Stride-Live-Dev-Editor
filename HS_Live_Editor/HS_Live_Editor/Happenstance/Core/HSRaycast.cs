@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Happenstance.SE.Core;
-using Happenstance.SE.PlayerController;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Physics;
