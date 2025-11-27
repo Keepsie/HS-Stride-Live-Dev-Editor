@@ -200,19 +200,22 @@ namespace Happenstance.SE.Core
         {
             if (transform == null) return 0f;
 
+            // Ensure world matrix is up to date (like PlayerController does)
+            transform.UpdateWorldMatrix();
+
             var currentPosition = transform.WorldMatrix.TranslationVector;
             var direction = position - currentPosition;
-            
+
             if (direction.LengthSquared() < 0.0001f) return 0f;
-            
+
             direction.Normalize();
-            
+
             var forward = transform.WorldMatrix.Forward;
             var dot = Vector3.Dot(direction, forward);
-            
+
             // Clamp dot product to valid range for acos
             dot = MathUtil.Clamp(dot, -1.0f, 1.0f);
-            
+
             var angleRadians = (float)Math.Acos(dot);
             return MathUtil.RadiansToDegrees(angleRadians);
         }
@@ -248,6 +251,26 @@ namespace Happenstance.SE.Core
         {
             if (transform == null) return Vector3.UnitZ;
             return (Vector3)transform.WorldMatrix.Forward;
+        }
+
+        /// <summary>
+        /// Gets the forward direction from a model entity (typically a child entity with visual mesh).
+        /// Useful for getting facing direction when model entity is separate from parent logic entity.
+        /// </summary>
+        /// <param name="transform">Transform to get forward direction from (typically a child model entity)</param>
+        /// <param name="reverseForBlender">If true, inverts the forward direction to account for Blender models facing -Z in model space (default: true)</param>
+        /// <returns>Normalized forward direction (inverted if reverseForBlender is true)</returns>
+        public static Vector3 GetForwardFromModel_HS(this TransformComponent transform, bool reverseForBlender = true)
+        {
+            if (transform == null) return Vector3.UnitZ;
+
+            // Force matrix update to get current rotation (Stride quirk - see TROUBLESHOOTING.md)
+            transform.UpdateWorldMatrix();
+
+            var forward = (Vector3)transform.WorldMatrix.Forward;
+
+            // Invert for Blender models that face -Z in model space
+            return reverseForBlender ? -forward : forward;
         }
 
         /// <summary>
@@ -375,10 +398,146 @@ namespace Happenstance.SE.Core
             transform.SmoothLookAt_HS(targetEntity.Transform, speed, deltaTime, worldUp);
         }
 
+        /// <summary>
+        /// Rotates transform to look at target position using Euler angles (more reliable than quaternion LookAt)
+        /// Uses same method as HSNavigator for consistent rotation behavior
+        /// </summary>
+        /// <param name="transform">Transform to rotate</param>
+        /// <param name="targetPosition">Position to look at</param>
+        public static void LookAtEuler_HS(this TransformComponent transform, Vector3 targetPosition)
+        {
+            if (transform == null) return;
+
+            var currentPosition = transform.WorldMatrix.TranslationVector;
+            var direction = targetPosition - currentPosition;
+
+            if (direction.LengthSquared() < 0.0001f) return;
+
+            direction.Normalize();
+
+            // Convert direction to yaw angle (same as HSNavigator)
+            float yaw = DirectionToYaw_HS(direction);
+            float yawDegrees = MathUtil.RadiansToDegrees(yaw);
+
+            // Apply rotation using Euler angles
+            transform.SetEulerAngles_HS(new Vector3(0, yawDegrees, 0));
+        }
+
+        /// <summary>
+        /// Smoothly rotates transform to look at target position using Euler angles
+        /// Uses same smooth rotation logic as HSNavigator for consistent behavior
+        /// </summary>
+        /// <param name="transform">Transform to rotate</param>
+        /// <param name="targetPosition">Position to look at</param>
+        /// <param name="rotationSpeed">Rotation speed in degrees per second</param>
+        /// <param name="deltaTime">Frame delta time</param>
+        public static void SmoothLookAtEuler_HS(this TransformComponent transform, Vector3 targetPosition, float rotationSpeed, float deltaTime)
+        {
+            if (transform == null) return;
+
+            var currentPosition = transform.WorldMatrix.TranslationVector;
+            var direction = targetPosition - currentPosition;
+
+            if (direction.LengthSquared() < 0.0001f) return;
+
+            direction.Normalize();
+
+            // Get current yaw from transform
+            var currentEuler = transform.GetEulerAngles_HS();
+            float currentYaw = MathUtil.DegreesToRadians(currentEuler.Y);
+
+            // Calculate target yaw (same as HSNavigator)
+            float targetYaw = DirectionToYaw_HS(direction);
+
+            // Calculate shortest rotation path (same as HSNavigator)
+            float angleDiff = targetYaw - currentYaw;
+            while (angleDiff > MathUtil.Pi) angleDiff -= MathUtil.TwoPi;
+            while (angleDiff < -MathUtil.Pi) angleDiff += MathUtil.TwoPi;
+
+            // Apply smooth rotation with threshold (same as HSNavigator)
+            if (Math.Abs(angleDiff) > 0.01f)
+            {
+                float rotationDelta = MathUtil.DegreesToRadians(rotationSpeed) * deltaTime;
+                float rotationAmount = Math.Sign(angleDiff) * Math.Min(Math.Abs(angleDiff), rotationDelta);
+                float newYaw = currentYaw + rotationAmount;
+                float newYawDegrees = MathUtil.RadiansToDegrees(newYaw);
+
+                transform.SetEulerAngles_HS(new Vector3(0, newYawDegrees, 0));
+            }
+        }
+
+        /// <summary>
+        /// Check if target position is within vision cone based on distance and angle.
+        /// Uses inverted forward direction to account for Blender models facing backwards in model space.
+        /// Useful for AI vision, security cameras, detection systems, etc.
+        /// </summary>
+        /// <param name="transform">Transform doing the vision check (enemy, camera, etc.)</param>
+        /// <param name="targetPosition">World position to check visibility for</param>
+        /// <param name="visionDistance">Maximum vision distance</param>
+        /// <param name="visionAngle">Vision cone angle in degrees (full cone, not half-angle)</param>
+        /// <param name="invertForward">If true, inverts forward direction for Blender models (default: true)</param>
+        /// <returns>True if target is within vision distance and vision cone</returns>
+        public static bool VisionConeTarget_HS(this TransformComponent transform, Vector3 targetPosition, float visionDistance, float visionAngle, bool invertForward = true)
+        {
+            if (transform == null) return false;
+
+            var observerPos = transform.GetWorldPosition_HS();
+
+            // Check distance first (cheaper than angle check)
+            float distance = transform.DistanceFrom_HS(targetPosition);
+            if (distance > visionDistance) return false;
+
+            // Calculate angle to target
+            var forward = invertForward ? -transform.GetForward_HS() : transform.GetForward_HS();
+            var directionToTarget = Vector3.Normalize(targetPosition - observerPos);
+
+            var dot = Vector3.Dot(directionToTarget, forward);
+            dot = MathUtil.Clamp(dot, -1.0f, 1.0f);
+
+            var angleRadians = (float)Math.Acos(dot);
+            var angle = MathUtil.RadiansToDegrees(angleRadians);
+
+            // Check if within vision cone (half-angle comparison)
+            return angle <= visionAngle * 0.5f;
+        }
+
+        // ================== SURFACE PLACEMENT UTILITIES ==================
+
+        /// <summary>
+        /// Places a decal transform on a surface with proper position and rotation alignment
+        /// Useful for bullet holes, blood splatters, scorch marks, etc.
+        /// The decal's local Z axis will align with the surface normal (pointing away from surface)
+        /// </summary>
+        /// <param name="transform">Transform of the decal to place</param>
+        /// <param name="hitPoint">World position where the surface was hit</param>
+        /// <param name="hitNormal">Normal vector of the surface at hit point</param>
+        /// <param name="normalOffset">Distance to offset decal along normal to prevent z-fighting (default: 0.01f)</param>
+        /// <param name="randomRotation">If true, applies random roll rotation (Z-axis) for visual variety (default: false)</param>
+        public static void PlaceDecalOnSurface_HS(this TransformComponent transform, Vector3 hitPoint, Vector3 hitNormal, float normalOffset = 0.03f, bool randomRotation = false)
+        {
+            if (transform == null) return;
+
+            // Position: offset along surface normal to prevent z-fighting
+            transform.Position = hitPoint + (hitNormal * normalOffset);
+
+            // Rotation: align decal's local Z axis to point along the surface normal
+            transform.Rotation = Quaternion.BetweenDirections(Vector3.UnitZ, hitNormal);
+
+            // Optional: Add random Z rotation (roll) for visual variety
+            // This works by directly modifying the Euler angle Z component (roll)
+            // which rotates around the local Z-axis (surface normal) regardless of wall orientation
+            if (randomRotation)
+            {
+                var euler = transform.GetEulerAngles_HS();
+                euler.Z = HSRandom.Range(0f, 360f);
+                transform.SetEulerAngles_HS(euler);
+            }
+        }
+
         // ================== PARENTING UTILITIES ==================
 
         /// <summary>
-        /// Safely unparents a transform while preserving its world position
+        /// Safely unparents a transform while preserving its world position, rotation, and scale
         /// Fixes Stride's issue where unparenting treats local position as world position
         /// </summary>
         /// <param name="transform">Transform to unparent</param>
@@ -386,15 +545,19 @@ namespace Happenstance.SE.Core
         {
             if (transform == null || transform.Parent == null) return;
 
-            // Store current world position and scene reference
+            // Store current world position, rotation, scale, and scene reference
             var worldPos = transform.GetWorldPosition_HS();
+            var worldRot = transform.GetWorldRotation_HS();
+            var worldScale = transform.Scale; // Scale is already world scale
             var scene = transform.Entity.Scene;
 
-            // Unparent (this breaks world position in Stride)
+            // Unparent (this breaks world position and rotation in Stride)
             transform.Parent = null;
 
-            // Restore correct world position
+            // Restore correct world position, rotation, and scale
             transform.Position = worldPos;
+            transform.Rotation = worldRot;
+            transform.Scale = worldScale;
 
             // Add back to scene root entities if not already there
             if (scene != null && !scene.Entities.Contains(transform.Entity))
@@ -404,7 +567,7 @@ namespace Happenstance.SE.Core
         }
 
         /// <summary>
-        /// Sets parent while maintaining current world position
+        /// Sets parent while maintaining current world position, rotation, and scale
         /// Item will appear in same world location after parenting
         /// </summary>
         /// <param name="transform">Transform to parent</param>
@@ -412,14 +575,19 @@ namespace Happenstance.SE.Core
         public static void SetParentPreserveWorld_HS(this TransformComponent transform, TransformComponent newParent)
         {
             if (transform == null || newParent == null) return;
-            // Store current world position
+
+            // Store current world position, rotation, and scale
             var worldPos = transform.GetWorldPosition_HS();
+            var worldRot = transform.GetWorldRotation_HS();
+            var worldScale = transform.Scale;
 
             // Set parent
             transform.Parent = newParent;
 
-            // Calculate local position using the new WorldToLocal method
+            // Calculate local position and rotation
             transform.Position = newParent.WorldToLocal_HS(worldPos);
+            transform.Rotation = newParent.WorldToLocalRotation_HS(worldRot);
+            transform.Scale = worldScale; // Preserve scale
         }
         
         /// <summary>

@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.UI;
 
@@ -367,6 +368,58 @@ namespace Happenstance.SE.Core
             }
             return new List<T>();
         }
-        
+
+        // ================== MODEL BOUNDS EXTENSIONS ==================
+
+        /// <summary>
+        /// Gets the full size of a model's bounding box
+        /// Returns the complete dimensions (not half-extents) - use this data for any collider shape
+        /// </summary>
+        /// <param name="entity">Entity with ModelComponent</param>
+        /// <returns>Full size of the bounding box, or Vector3.One if no model found</returns>
+        public static Vector3 GetModelBoundsSize_HS(this Entity entity)
+        {
+            var modelComponent = entity?.Get<ModelComponent>();
+            if (modelComponent?.Model == null)
+                return Vector3.One;
+
+            var bounds = modelComponent.Model.BoundingBox;
+            return bounds.Maximum - bounds.Minimum;
+        }
+
+        /// <summary>
+        /// Gets the center offset of the model bounding box in local space
+        /// Use this as the collider's local offset for models not centered at origin
+        /// </summary>
+        /// <param name="entity">Entity with ModelComponent</param>
+        /// <returns>Center offset of the bounding box, or Vector3.Zero if no model found</returns>
+        public static Vector3 GetModelBoundsCenter_HS(this Entity entity)
+        {
+            var modelComponent = entity?.Get<ModelComponent>();
+            if (modelComponent?.Model == null)
+                return Vector3.Zero;
+
+            return modelComponent.Model.BoundingBox.Center;
+        }
+
+        /// <summary>
+        /// Gets both size and center of the model bounding box in one call
+        /// More efficient than calling size and center methods separately
+        /// </summary>
+        /// <param name="entity">Entity with ModelComponent</param>
+        /// <returns>Tuple containing (Size, Center) of the bounding box</returns>
+        public static (Vector3 Size, Vector3 Center) GetModelBounds_HS(this Entity entity)
+        {
+            var modelComponent = entity?.Get<ModelComponent>();
+            if (modelComponent?.Model == null)
+                return (Vector3.One, Vector3.Zero);
+
+            var bounds = modelComponent.Model.BoundingBox;
+            var size = bounds.Maximum - bounds.Minimum;
+            var center = bounds.Center;
+
+            return (size, center);
+        }
+
     }
 }

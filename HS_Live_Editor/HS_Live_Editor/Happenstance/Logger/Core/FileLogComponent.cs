@@ -38,20 +38,20 @@ namespace Happenstance.SE.Logger.Core
         {
             if (_logLevel != HSLogLevel.All && level != _logLevel) return;
             string logEntry = $"[{System.DateTime.Now:yyyy-MM-dd HH:mm:ss}] [{level}] {HSLogger.RemoveTags(message)}";
-            _ = WriteLogAsync(logEntry);
+            WriteLogSync(logEntry);
         }
 
-        private async Task WriteLogAsync(string logEntry)
+        private void WriteLogSync(string logEntry)
         {
             try
             {
-                await _semaphore.WaitAsync();
+                _semaphore.Wait(); // Synchronous wait instead of async
                 try
                 {
                     using (StreamWriter writer = new StreamWriter(_filePath, true))
                     {
-                        await writer.WriteLineAsync(logEntry);
-                        await writer.FlushAsync();
+                        writer.WriteLine(logEntry);
+                        writer.Flush();
                     }
                 }
                 finally
@@ -61,7 +61,8 @@ namespace Happenstance.SE.Logger.Core
             }
             catch (IOException ex)
             {
-                throw new System.ArgumentException(ex.Message);
+                // Don't throw, just silently fail to avoid breaking the game
+                // Could log to console here if needed
             }
         }
     }
